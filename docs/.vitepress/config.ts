@@ -62,6 +62,7 @@ export default defineConfig({
             { text: 'Écrans', link: '/mobile/screens' },
             { text: 'Authentification', link: '/mobile/auth' },
             { text: 'Messagerie', link: '/mobile/messaging' },
+            { text: 'Notifications push', link: '/mobile/notifications' },
           ],
         },
       ],

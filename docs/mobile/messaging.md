@@ -43,10 +43,9 @@ const msg = isPrestataire
 
 ## Notifications push
 
-À l'arrivée d'un nouveau message, le destinataire reçoit une **notification push Expo** (iOS / Android) si l'app est installée et que les permissions ont été accordées.
+À l'arrivée d'un nouveau message, le destinataire reçoit une **notification push Expo** (💬) si l'app est installée et que les permissions ont été accordées. Le tap navigue directement vers `requests/[id]`.
 
-- Le tap sur la notification navigue directement vers `requests/[id]` (la conversation concernée)
-- Le token Expo est enregistré automatiquement après connexion et supprimé si il devient invalide (`DeviceNotRegistered`)
+→ Voir [Notifications push](/mobile/notifications) pour la couverture complète et l'architecture.
 
 ## Limitations actuelles vs web
 

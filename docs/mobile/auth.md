@@ -54,22 +54,23 @@ getStoredToken()
 
 ## Notifications push (Expo)
 
-`services/notifications.ts` gère l'enregistrement aux notifications push mobiles.
+`services/notifications.ts` gère l'enregistrement aux notifications push mobiles. Le token Expo est enregistré automatiquement après chaque connexion réussie.
 
 ```
-auth.isLoggedIn devient true
+auth.isLoggedIn = true
   └─► registerForPushNotifications()
-        ├─ Demande les permissions (iOS) / configure le canal (Android)
-        └─ getExpoPushTokenAsync() → ExponentPushToken[...]
-              └─► POST /api/push/expo-token → token stocké en base
+        ├─ requestForegroundPermissionsAsync()
+        ├─ setNotificationChannelAsync('default')  [Android]
+        └─ getExpoPushTokenAsync()
+              └─► POST /api/push/expo-token
 
-Notification reçue
-  └─► tap → addNotificationResponseReceivedListener
-              ├─ data.screen === 'requests' → router.push('/requests/:id')
-              └─ data.screen === 'demandes' → router.push('/(tabs)/demandes')
+Tap sur une notification
+  └─► addNotificationResponseReceivedListener
+        ├─ data.screen === 'requests' → /requests/:id  (conversation)
+        └─ data.screen === 'demandes' → /(tabs)/demandes
 ```
 
-Le backend nettoie automatiquement les tokens invalides (`DeviceNotRegistered`) après chaque envoi.
+→ Voir [Notifications push](/mobile/notifications) pour la couverture complète des 8 événements, l'architecture backend et la configuration `app.json`.
 
 ## Rôles et accès
 
