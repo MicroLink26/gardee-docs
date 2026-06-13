@@ -4,11 +4,16 @@
 
 Recherche de prestataires avec pagination infinie.
 
+**Barre de recherche :**
+- 🔍 Texte libre — soumet la recherche
+- 📍 **Près de moi** — demande la permission de localisation, récupère les coordonnées GPS et passe `lat`/`lng` à l'API. Désactive le filtre ville (les deux sont exclusifs). Chip "Près de moi" affiché dans les filtres actifs.
+- ⚙️ **Filtres** — ouvre le modal bottom sheet
+
 **Filtres disponibles** (modal bottom sheet) :
-- **Ville** — champ texte libre
+- **Ville** — champ texte libre (ignoré si géolocalisation active)
 - **Prestation** — sélection parmi les catégories chargées depuis l'API
 
-Les filtres actifs sont affichés en chips au-dessus de la liste avec un bouton "Effacer". Le bouton filtre affiche le nombre de filtres actifs.
+Les filtres actifs sont affichés en chips au-dessus des résultats avec un bouton "Effacer".
 
 **Résultats** : `PrestataireCard` avec photo (ou initiales), ville, note, tarif et prestations. Tap → fiche prestataire.
 
@@ -33,6 +38,7 @@ Affiche et permet de modifier le profil de l'utilisateur connecté.
 
 - **Vue** : email, téléphone, tarif horaire, services, description
 - **Édition** : nom, prénom, téléphone + champs prestataire (tarif, adresse, ville, description)
+- **Sauvegarde** : l'interface se met à jour immédiatement après l'enregistrement (store Zustand synchronisé avec la réponse API — pas de logout/login requis)
 - **Non connecté** : boutons Connexion et Inscription
 
 ## Fiche prestataire (`prestataires/[id].tsx`)

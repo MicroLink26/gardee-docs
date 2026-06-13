@@ -32,13 +32,13 @@ Les variables préfixées `EXPO_PUBLIC_` sont intégrées au bundle.
 
 ```
 app/                         # Routage Expo Router (file-based)
-├── _layout.tsx              # Layout racine : hydrate le store auth
+├── _layout.tsx              # Layout racine : hydrate le store auth + enregistrement push
 ├── auth/                    # Écrans non authentifiés
 │   ├── login.tsx
 │   ├── register.tsx
 │   └── forgot-password.tsx
 ├── (tabs)/                  # Navigation par onglets (3 tabs)
-│   ├── index.tsx            # Recherche de prestataires
+│   ├── index.tsx            # Recherche + filtres ville/prestation + géolocalisation 📍
 │   ├── demandes.tsx         # Demandes en cours
 │   └── profil.tsx           # Profil utilisateur
 ├── prestataires/[id].tsx    # Fiche prestataire + formulaire

@@ -12,7 +12,10 @@ auth.isStaff       // role === 'staff' || 'admin'
 auth.login(email, password)  // POST /auth/login → stocke le token
 auth.logout()                // POST /auth/logout → vide le token
 auth.hydrate()               // appelé au démarrage → recharge depuis le token stocké
+auth.updateUser(patch)       // fusionne un patch dans user sans appel réseau
 ```
+
+`updateUser` est utilisé après `PUT /users/me` pour synchroniser l'interface immédiatement sans forcer un logout/login.
 
 ## Flux au démarrage
 
