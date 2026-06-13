@@ -17,6 +17,17 @@ auth.updateUser(patch)       // fusionne un patch dans user sans appel réseau
 
 `updateUser` est utilisé après `PUT /users/me` pour synchroniser l'interface immédiatement sans forcer un logout/login.
 
+## Store catégories
+
+`stores/categories.ts` — cache des catégories de prestations, chargé une seule fois au démarrage.
+
+```ts
+categories.load()           // GET /api/categories (lazy, idempotent)
+categories.nameById(id)     // ObjectId → nom lisible, fallback = id brut
+```
+
+Chargé dans `app/_layout.tsx` en parallèle de `auth.hydrate()`. Utilisé dans `PrestataireCard`, les cartes de demandes et la fiche prestataire pour convertir les IDs en noms (les prestations sont stockées comme ObjectIds en base).
+
 ## Flux au démarrage
 
 ```

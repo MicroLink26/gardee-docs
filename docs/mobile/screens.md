@@ -15,7 +15,11 @@ Recherche de prestataires avec pagination infinie.
 
 Les filtres actifs sont affichés en chips au-dessus des résultats avec un bouton "Effacer".
 
-**Résultats** : `PrestataireCard` avec photo (ou initiales), ville, note, tarif et prestations. Tap → fiche prestataire.
+**Résultats** : `PrestataireCard` avec photo (ou initiales), ville, note, tarif et noms des prestations. Tap → fiche prestataire.
+
+::: tip Résolution des catégories
+Les prestations sont stockées comme des IDs MongoDB dans l'API. Le store `categories.ts` charge les catégories au démarrage de l'app et expose `nameById(id)` pour les résoudre en noms lisibles partout dans l'interface.
+:::
 
 ## Onglet Demandes (`(tabs)/demandes.tsx`)
 

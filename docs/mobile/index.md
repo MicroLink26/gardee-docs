@@ -39,10 +39,10 @@ app/                         # Routage Expo Router (file-based)
 │   └── forgot-password.tsx
 ├── (tabs)/                  # Navigation par onglets (3 tabs)
 │   ├── index.tsx            # Recherche + filtres ville/prestation + géolocalisation 📍
-│   ├── demandes.tsx         # Demandes en cours
-│   └── profil.tsx           # Profil utilisateur
-├── prestataires/[id].tsx    # Fiche prestataire + formulaire
-├── requests/[id].tsx        # Fil de messages d'une demande
+│   ├── demandes.tsx         # Demandes (useFocusEffect — refresh au retour d'une conv.)
+│   └── profil.tsx           # Profil utilisateur (sync immédiate après sauvegarde)
+├── prestataires/[id].tsx    # Fiche prestataire + formulaire de demande
+├── requests/[id].tsx        # Fil de messages (useFocusEffect + pull-to-refresh)
 └── admin/
     └── pending.tsx          # Validation prestataires (staff)
 
@@ -56,7 +56,8 @@ services/
 └── notifications.ts    # registerForPushNotifications, saveExpoToken, removeExpoToken
 
 stores/
-└── auth.ts          # Zustand : user, login, logout, hydrate
+├── auth.ts          # Zustand : user, login, logout, hydrate, updateUser
+└── categories.ts    # Zustand : cache des catégories, nameById(id) → nom
 
 types/
 └── index.ts         # User, ServiceRequest, Category, REQUEST_STATUS_LABELS…
