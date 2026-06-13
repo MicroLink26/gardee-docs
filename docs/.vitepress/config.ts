@@ -7,12 +7,12 @@ export default defineConfig({
   base: '/gardee-docs/',
 
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/gardee-docs/favicon.svg' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/gardee-docs/favicon.png' }],
   ],
 
   themeConfig: {
-    logo: { src: '/logo.svg', alt: 'Gardee' },
-    siteTitle: 'Gardee',
+    logo: { src: '/logo.png', alt: 'Gardee', width: 100, height: 44 },
+    siteTitle: false,
 
     nav: [
       { text: 'Accueil', link: '/' },
