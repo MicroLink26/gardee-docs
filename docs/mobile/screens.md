@@ -18,10 +18,12 @@ Affiche les demandes de service en cours. Le contenu s'adapte selon le rôle :
 
 | Rôle | Données | Actions disponibles |
 |---|---|---|
-| Prestataire | `GET /requests/mine` | Accepter, Proposer une date, Refuser, Annuler |
+| Prestataire | `GET /requests/mine` | Accepter, Proposer une date, Refuser, Annuler, Marquer comme terminé |
 | Client | `GET /requests/mine/client` | Accepter la date proposée |
 
 **Proposition de date** (prestataire) : modal avec DateTimePicker natif (iOS spinner, Android dialog) et commentaire facultatif. Disponible sur les statuts `sent_to_provider` et `provider_accepted`.
+
+**Marquer comme terminé** (prestataire) : bouton vert "✓ Terminer" sur les demandes en statut `scheduled`, côte à côte avec "Annuler". Confirmation obligatoire avant envoi.
 
 **Tap sur une carte** → écran de conversation `requests/[id]`.
 

@@ -41,14 +41,20 @@ const msg = isPrestataire
 | Réactions emoji | Badges groupés par emoji avec compteur sous la bulle |
 | Messages épinglés | Affichage normal (sans indicateur visuel distincts sur mobile) |
 
-## Limitations actuelles vs web
+## Notifications push
 
-Le web dispose de fonctionnalités supplémentaires non encore portées sur mobile :
+À l'arrivée d'un nouveau message, le destinataire reçoit une **notification push Expo** (iOS / Android) si l'app est installée et que les permissions ont été accordées.
+
+- Le tap sur la notification navigue directement vers `requests/[id]` (la conversation concernée)
+- Le token Expo est enregistré automatiquement après connexion et supprimé si il devient invalide (`DeviceNotRegistered`)
+
+## Limitations actuelles vs web
 
 | Fonctionnalité | Web | Mobile |
 |---|:---:|:---:|
 | Lire les messages | ✅ | ✅ |
 | Envoyer un message | ✅ | ✅ |
+| Notification push à la réception | ✅ Web Push | ✅ Expo Push |
 | Réagir à un message | ✅ | ❌ |
 | Modifier un message | ✅ | ❌ |
 | Supprimer un message | ✅ | ❌ |

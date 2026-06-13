@@ -76,6 +76,8 @@ gardee-v2/
 | Composant | Service | CI/CD |
 |---|---|---|
 | Backend | [Northflank](https://northflank.com) — auto-deploy au push | GitHub Actions : tsc + 268 tests + build |
-| Frontend | OVH FTP (`/www/front`) | GitHub Actions : build → FTP → smoke test |
+| Frontend | OVH FTP (`/www/front`) | GitHub Actions : build → FTP → smoke test headless |
 | Mobile | Distribution Expo | GitHub Actions : tsc |
-| Dépendances | Dependabot hebdomadaire | — |
+| Dépendances | Dependabot hebdomadaire (lundi) | — |
+| Cron daily | GitHub Actions schedule 07h00 UTC | Géocodage, rappels, emails d'avis |
+| Documentation | [GitHub Pages](https://microlink26.github.io/gardee-docs/) | Auto-rebuild après chaque push sur back/front/mobile |

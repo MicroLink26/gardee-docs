@@ -47,12 +47,13 @@ app/                         # Routage Expo Router (file-based)
     └── pending.tsx          # Validation prestataires (staff)
 
 services/
-├── api.ts           # Axios + stockage token multi-plateforme
-├── auth.ts          # login, logout, getMe, refresh, registerClient
-├── users.ts         # getMyProfile, updateMyProfile
-├── prestataires.ts  # search, ranking, getPrestataire, getReviews, getCategories
-├── requests.ts      # CRUD demandes + actions workflow
-└── messages.ts      # getMessages, sendMessage, markRead
+├── api.ts              # Axios + stockage token multi-plateforme
+├── auth.ts             # login, logout, getMe, refresh, registerClient
+├── users.ts            # getMyProfile, updateMyProfile
+├── prestataires.ts     # search, ranking, getPrestataire, getReviews, getCategories
+├── requests.ts         # CRUD demandes + actions workflow (accept, refuse, propose, complete)
+├── messages.ts         # getMessages, sendMessage, sendClientMessage, markRead
+└── notifications.ts    # registerForPushNotifications, saveExpoToken, removeExpoToken
 
 stores/
 └── auth.ts          # Zustand : user, login, logout, hydrate

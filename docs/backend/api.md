@@ -164,7 +164,9 @@
 | POST | `/api/categories` | 👤 | Crée une catégorie |
 | DELETE | `/api/categories/:id` | 👤 | Supprime une catégorie |
 | POST | `/api/contact` | — | Formulaire de contact |
-| GET | `/api/push/vapid-public-key` | — | Clé VAPID publique |
-| POST | `/api/push/subscribe` | 🔑 | Abonne aux push |
-| DELETE | `/api/push/subscribe` | 🔑 | Désabonne |
-| GET | `/cron/daily` | 🎫 CRON_SECRET | Tâches planifiées |
+| GET | `/api/push/vapid-public-key` | — | Clé VAPID publique (Web Push) |
+| POST | `/api/push/subscribe` | 🔑 | Abonne aux push navigateur (VAPID) |
+| DELETE | `/api/push/subscribe` | 🔑 | Désabonne (Web Push) |
+| POST | `/api/push/expo-token` | 🔑 | Enregistre un token Expo Push (mobile) |
+| DELETE | `/api/push/expo-token` | 🔑 | Supprime un token Expo Push |
+| GET | `/cron/daily` | 🎫 CRON_SECRET | Tâches planifiées (déclenché automatiquement par GitHub Actions à 07h00 UTC) |
