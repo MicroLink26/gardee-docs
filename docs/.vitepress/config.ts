@@ -11,7 +11,7 @@ export default defineConfig({
   ],
 
   themeConfig: {
-    logo: { src: '/logo.png', alt: 'Gardee', width: 100, height: 44 },
+    logo: { src: '/logo.webp', alt: 'Gardee', width: 120, height: 40 },
     siteTitle: false,
 
     nav: [
