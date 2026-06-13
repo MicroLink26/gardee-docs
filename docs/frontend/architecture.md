@@ -54,6 +54,28 @@ src/
 
 Si le refresh échoue, l'utilisateur est redirigé vers `/app/login`.
 
+## Messagerie — rafraîchissement automatique
+
+`Messagerie.vue` implémente un **polling toutes les 30 secondes** sur la conversation active :
+
+```ts
+// onMounted
+pollTimer = setInterval(refreshActiveThread, 30_000);
+
+// onUnmounted
+clearInterval(pollTimer);
+
+async function refreshActiveThread() {
+  const res = await getMessages(activeThread._id);
+  if (res.messages.length > messages.value.length) {
+    messages.value = res.messages;
+    scrollToBottom();
+  }
+}
+```
+
+Le scroll n'est déclenché que si de nouveaux messages sont arrivés. Le timer est nettoyé à la destruction du composant pour éviter les fuites mémoire.
+
 ## Sitemap
 
 Le sitemap est régénéré à chaque build depuis les pages réellement présentes dans `dist/` (incluant toutes les fiches prestataires prérendues). Il est uploadé sur le serveur FTP en même temps que le reste du build.
