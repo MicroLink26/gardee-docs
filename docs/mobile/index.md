@@ -57,7 +57,8 @@ services/
 
 stores/
 ├── auth.ts          # Zustand : user, login, logout, hydrate, updateUser
-└── categories.ts    # Zustand : cache des catégories, nameById(id) → nom
+├── categories.ts    # Zustand : cache des catégories, nameById(id) → nom
+└── unread.ts        # Zustand : compteur messages non lus, polling 60s
 
 types/
 └── index.ts         # User, ServiceRequest, Category, REQUEST_STATUS_LABELS…

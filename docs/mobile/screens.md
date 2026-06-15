@@ -23,6 +23,8 @@ Les prestations sont stockées comme des IDs MongoDB dans l'API. Le store `categ
 
 ## Onglet Demandes (`(tabs)/demandes.tsx`)
 
+L'onglet affiche un **badge rouge** dès qu'il y a des messages non lus (`stores/unread.ts` → `GET /requests/messages/unread-count`, polling toutes les 60s). Le badge est cappé à `99+`.
+
 Affiche les demandes de service en cours. Le contenu s'adapte selon le rôle :
 
 | Rôle | Données | Actions disponibles |

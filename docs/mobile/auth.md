@@ -28,6 +28,20 @@ categories.nameById(id)     // ObjectId → nom lisible, fallback = id brut
 
 Chargé dans `app/_layout.tsx` en parallèle de `auth.hydrate()`. Utilisé dans `PrestataireCard`, les cartes de demandes et la fiche prestataire pour convertir les IDs en noms (les prestations sont stockées comme ObjectIds en base).
 
+## Store messages non lus
+
+`stores/unread.ts` — compteur de messages non lus, affiché en badge sur l'onglet Demandes.
+
+```ts
+unread.count          // nombre de messages non lus
+unread.fetch()        // GET /api/requests/messages/unread-count
+unread.reset()        // remet à 0 (non utilisé automatiquement)
+```
+
+Monté dans `(tabs)/_layout.tsx` avec un `setInterval(fetch, 60_000)`. Déclenché au login (`isLoggedIn` devient `true`) et nettoyé à la déconnexion.
+
+L'endpoint backend compte les messages non lus **de l'autre partie** : pour un prestataire, les messages des clients non encore marqués comme lus ; pour un client, les messages des prestataires.
+
 ## Flux au démarrage
 
 ```

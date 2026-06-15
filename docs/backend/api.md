@@ -164,6 +164,7 @@
 | POST | `/api/categories` | 👤 | Crée une catégorie |
 | DELETE | `/api/categories/:id` | 👤 | Supprime une catégorie |
 | POST | `/api/contact` | — | Formulaire de contact |
+| GET | `/api/requests/messages/unread-count` | 🔑 | Nombre de messages non lus de l'autre partie |
 | GET | `/api/push/vapid-public-key` | — | Clé VAPID publique (Web Push) |
 | POST | `/api/push/subscribe` | 🔑 | Abonne aux push navigateur (VAPID) |
 | DELETE | `/api/push/subscribe` | 🔑 | Désabonne (Web Push) |
