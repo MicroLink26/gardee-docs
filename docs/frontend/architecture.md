@@ -76,6 +76,8 @@ async function refreshActiveThread() {
 
 Le scroll n'est déclenché que si de nouveaux messages sont arrivés. Le timer est nettoyé à la destruction du composant pour éviter les fuites mémoire.
 
+**Fils clients** : pour les fils `_type: 'client'`, les messages sont embarqués dans la réponse `listClientThreads()`. Le polling recharge donc `listClientThreads()` et met à jour les messages du fil actif si de nouveaux sont arrivés.
+
 ## Sitemap
 
 Le sitemap est régénéré à chaque build depuis les pages réellement présentes dans `dist/` (incluant toutes les fiches prestataires prérendues). Il est uploadé sur le serveur FTP en même temps que le reste du build.

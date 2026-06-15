@@ -30,7 +30,7 @@ Affiche les demandes de service en cours. Le contenu s'adapte selon le rôle :
 | Rôle | Données | Actions disponibles |
 |---|---|---|
 | Prestataire | `GET /requests/mine` | Accepter, Proposer une date, Refuser, Annuler, Marquer comme terminé |
-| Client | `GET /requests/mine/client` | Accepter la date proposée |
+| Client | `GET /requests/mine/client` | Accepter la date proposée, Refuser la date proposée |
 
 **Proposition de date** (prestataire) : modal avec DateTimePicker natif (iOS spinner, Android dialog) et commentaire facultatif. Disponible sur les statuts `sent_to_provider` et `provider_accepted`.
 

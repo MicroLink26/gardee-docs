@@ -87,6 +87,7 @@
 | POST | `/:id/provider/refuse` | 🌿 | Refuse |
 | POST | `/:id/provider/cancel` | 🌿 | Annule |
 | POST | `/:id/client/accept-proposal` | 🔑 | Accepte la date proposée |
+| POST | `/:id/client/refuse-proposal` | 🔑 | Refuse la date proposée (renvoie au prestataire) |
 | POST | `/:id/complete` | 🌿 | Marque comme terminé |
 | GET | `/labels` | 🔑 | Labels disponibles |
 | POST | `/:id/labels/add` | 🔑 | Ajoute un label |
